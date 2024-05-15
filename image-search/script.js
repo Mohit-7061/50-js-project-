@@ -13,7 +13,7 @@ submit.addEventListener('click', async() => {
         const url = `https://api.unsplash.com/search/photos?page=3&query=${search_value}&client_id=${key}`
         let data = await fetch(url)
         data = await data.json();
-        console.log(data);
+        
         displayImages(data);
     }
 });
@@ -22,7 +22,7 @@ submit.addEventListener('click', async() => {
 function displayImages(data){
     img_container.innerHTML = ''
     data.results.forEach(element => {
-        console.log(element.urls.regular,"element.urls.regular")
+     
         const img = document.createElement('img')
         img.src=element.urls.regular
         img_container.appendChild(img)
